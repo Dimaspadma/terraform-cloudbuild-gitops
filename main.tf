@@ -6,6 +6,11 @@ terraform {
       name = "learn-terraform-github-actions"
     }
   }
+
+  backend "gcs" {
+   bucket  = "${google_storage_bucket.default.name}"
+   prefix  = "terraform/state"
+ }
 }
 
 provider "google" {
