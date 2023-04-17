@@ -5,10 +5,14 @@ terraform {
     workspaces {
       name = "learn-terraform-github-actions"
     }
-
-    bucket  = "${google_storage_bucket.default.name}"
-    prefix  = "terraform/state"
   }
+}
+
+terraform {
+  backend "gcs" {
+   bucket  = "${google_storage_bucket}"
+   prefix  = "terraform/state"
+ }
 }
 
 provider "google" {
