@@ -16,22 +16,22 @@ provider "google" {
 }
 
 # Create VPC
-resource "google_compute_network" "vpc_network" {
-  name                    = "my-network"
-  auto_create_subnetworks = false
-  mtu                     = 1460
+# resource "google_compute_network" "vpc_network" {
+#   name                    = "my-network"
+#   auto_create_subnetworks = false
+#   mtu                     = 1460
+# }
+
+resource "random_id" "bucket_prefix" {
+  byte_length = 8
 }
 
-# resource "random_id" "bucket_prefix" {
-#   byte_length = 8
-# }
-
-# resource "google_storage_bucket" "default" {
-#   name          = "${random_id.bucket_prefix.hex}-bucket-tfstate"
-#   force_destroy = false
-#   location      = "US"
-#   storage_class = "STANDARD"
-#   versioning {
-#     enabled = true
-#   }
-# }
+resource "google_storage_bucket" "default" {
+  name          = "${random_id.bucket_prefix.hex}-bucket-tfstate"
+  force_destroy = false
+  location      = "US"
+  storage_class = "STANDARD"
+  versioning {
+    enabled = true
+  }
+}
