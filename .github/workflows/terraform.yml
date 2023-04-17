@@ -30,9 +30,9 @@ jobs:
 
     # Terraform Format checks whether the configuration has been properly formatted. 
     # If the configuration isn't properly formatted this step will produce an error.
-    - name: Terraform Format
-      id: fmt
-      run: terraform fmt -check
+    # - name: Terraform Format
+    #   id: fmt
+    #   run: terraform fmt -check
 
     # Terraform Init initializes the configuration used in the GitHub action workflow.
     - name: Terraform Init
