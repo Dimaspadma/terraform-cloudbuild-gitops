@@ -1,16 +1,7 @@
-terraform {
-  cloud {
-    organization = "bangkit"
+# Create Bucket for datasets
+resource "google_storage_bucket" "bucket_models" {
+  name     = "models-${var.gcp_project}"
+  location = var.gcp_region
 
-    workspaces {
-      name = "learn-terraform-github-actions"
-    }
-  }
-}
-
-provider "google" {
-  project     = var.gcp_project
-  region      = var.gcp_region
-  zone        = var.gcp_zone
-  credentials = var.gcp_credential
+  uniform_bucket_level_access = true
 }
