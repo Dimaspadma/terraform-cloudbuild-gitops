@@ -6,8 +6,3 @@ variable "gcp_region" {
 variable "gcp_zone" { 
   default = "us-central1-c"
 }
-
-variable "gke_num_nodes" {
-  default     = 2
-  description = "number of gke nodes"
-}
