@@ -1,7 +1,7 @@
 # Create Bucket for datasets
 resource "google_storage_bucket" "bucket_models" {
-  name     = "models-${var.gcp_project}"
-  location = var.gcp_region
+  name     = var.name
+  location = var.location
 
   uniform_bucket_level_access = true
 }
