@@ -4,8 +4,4 @@ resource "google_storage_bucket" "bucket_models" {
   location = var.location
 
   uniform_bucket_level_access = true
-
-  lifecycle {
-    ignore_changes = [  ]
-  }
 }

@@ -1,4 +1,4 @@
-# Use a Zonal Cluster
+# # Use a Zonal Cluster
 
 resource "google_container_cluster" "primary" {
   name     = var.name
